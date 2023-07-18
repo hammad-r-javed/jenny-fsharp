@@ -52,6 +52,18 @@ let ``Test encoding table with escapable chars into markdown table``() =
     let elem = Jenny.Table <| colNames :: rows
     Assert.That(Jenny.Markdown.encode elem, Is.EqualTo("| S\\!yntax | Descri\\`p\\`tion |\n| --- | --- |\n| Head\\_\\_er | Ti\\)tle |\n| Para\\.graph | Tex\\-t |\n\n"))
 
+[<Test>]
+let ``Test encoding ordered list, with escapable chars, into markdown ordered list``() =
+    let items = ["ite`m0"; "item#1"; "_item3"];
+    let elem = Jenny.OrderedList <| items
+    Assert.That(Jenny.Markdown.encode elem, Is.EqualTo("1. ite\\`m0\n1. item\\#1\n1. \\_item3\n\n\n"))
+
+[<Test>]
+let ``Test encoding unordered list, with escapable chars, into markdown unordered list``() =
+    let items = ["ite`m0"; "item#1"; "_item3"];
+    let elem = Jenny.UnorderedList <| items
+    Assert.That(Jenny.Markdown.encode elem, Is.EqualTo("* ite\\`m0\n* item\\#1\n* \\_item3\n\n\n"))
+
 
 // Encoding HTML
 // TODO
