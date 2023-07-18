@@ -35,3 +35,23 @@ let ``Test table creation using rows with same number of columns each``() =
     match Jenny.Element.table tableCols tableRows with
     | Ok value -> Assert.That(value, Is.EqualTo(expected))
     | Error value -> Assert.That(value, Is.EqualTo(expected))
+
+// Encoding Markdown
+[<Test>]
+let ``Test encoding heading 1, with all escapable chars, into markdown heading1``() = 
+    let elem = Jenny.Element.heading1 "\\t`h*i_s{ }i[s] (j)ust # s+o-m.e rand!om text"
+    Assert.That(Jenny.Markdown.encode elem, Is.EqualTo("# \\\\t\\`h\\*i\\_s\\{ \\}i\\[s\\] \\(j\\)ust \\# s\\+o\\-m\\.e rand\\!om text\n\n"))
+
+[<Test>]
+let ``Test encoding table with escapable chars into markdown table``() =
+    let colNames = ["S!yntax"; "Descri`p`tion"]
+    let rows = [
+        ["Head__er"; "Ti)tle"];
+        ["Para.graph"; "Tex-t"]
+    ]
+    let elem = Jenny.Table <| colNames :: rows
+    Assert.That(Jenny.Markdown.encode elem, Is.EqualTo("| S\\!yntax | Descri\\`p\\`tion |\n| --- | --- |\n| Head\\_\\_er | Ti\\)tle |\n| Para\\.graph | Tex\\-t |\n\n"))
+
+
+// Encoding HTML
+// TODO

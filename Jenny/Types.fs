@@ -14,7 +14,6 @@ type Element =
     | Heading6 of string
     | Paragraph of string
     | CodeBlock of string
-    | BlockQuote of string
     | Table of list<list<string>>
     | OrderedList of list<string>
     | UnorderedList of list<string>
@@ -28,7 +27,6 @@ module Element =
     let heading6 text = Element.Heading6 text
     let paragraph text = Element.Paragraph text
     let codeBlock text = Element.CodeBlock text
-    let blockQuote text = Element.BlockQuote text
 
     let table (colNames : list<string>) (rows : list<list<string>>) : Result<Element, Err> =
         let colNamesLen = List.length colNames
