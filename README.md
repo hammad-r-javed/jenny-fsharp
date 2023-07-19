@@ -3,6 +3,11 @@ My personal small F# lib to help with generating Markdown/HTML reports.
 
 I'm getting familiar with F# and so The project is a WIP and the direction for the project hasn't been finalised yet. The goal of the lib at the moment is to provide a typed way to format text into Markdown/HTML elements, which can then be used to generate reports.
 
+# Installation
+```shell
+dotnet add package HRJDev.Jenny
+```
+
 # Usage
 "Elements" can be created and then "encoded" into HTML or Markdown formatted strings. When encoding to either HTML or Markdown, special chars will be escaped.
 
@@ -45,5 +50,5 @@ let heading2 = Jenny.Element.heading2 "Some Title"
 Jenny.Markdown.encode heading2 // will return "## Some Title"
 
 // Encode to HTML (not implemented yet)
-Jenny.HTML.encode codeBlock
+Jenny.HTML.encode heading2
 ```

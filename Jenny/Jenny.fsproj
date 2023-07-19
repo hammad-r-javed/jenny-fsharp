@@ -3,13 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <VersionPrefix>0.9.0</VersionPrefix>
+    <VersionPrefix>0.9.1</VersionPrefix>
     <PackageId>HRJDev.Jenny</PackageId>
-    <Authors>Hammad</Authors>
+    <Authors>Hammad Javed</Authors>
     <Company>HRJDev</Company>
     <Description>Simple Markdown/HTML generation</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Markdown, HTML</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/hammad-r-javed/jenny-fsharp</RepositoryUrl>
   </PropertyGroup>
 
@@ -17,6 +18,7 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>Jenny.Tests</_Parameter1>
     </AssemblyAttribute>
+    <None Include="../README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
