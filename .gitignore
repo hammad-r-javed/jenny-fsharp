@@ -354,4 +354,4 @@ IGNORE/
 obj/
 bin/
 .localized
-.sail
+*.sail
