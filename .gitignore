@@ -355,3 +355,4 @@ obj/
 bin/
 .localized
 *.sail
+nupkgs
