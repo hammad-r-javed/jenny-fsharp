@@ -1,1 +1,1 @@
-dotnet pack -c Release
+dotnet clean -c Release && dotnet pack -c Release
