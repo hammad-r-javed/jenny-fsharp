@@ -41,7 +41,7 @@ module Markdown =
         | Element.Heading5 text -> $"##### {escapeSpecialChars text}\n\n"
         | Element.Heading6 text -> $"###### {escapeSpecialChars text}\n\n"
         | Element.Paragraph text -> $"{escapeSpecialChars text}\n\n"
-        | Element.CodeBlock text -> $"```\n${escapeSpecialChars text}\n```\n\n"
+        | Element.CodeBlock text -> $"```\n{escapeSpecialChars text}\n```\n\n"
         | Element.Table table ->
             let colLen =
                 table 

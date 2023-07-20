@@ -4,9 +4,7 @@ My personal small F# lib to help with generating Markdown/HTML reports.
 I'm getting familiar with F# and so The project is a WIP and the direction for the project hasn't been finalised yet. The goal of the lib at the moment is to provide a typed way to format text into Markdown/HTML elements, which can then be used to generate reports.
 
 # Installation
-```shell
-dotnet add package HRJDev.Jenny
-```
+[Nuget Page for HRJDev.Jenny](https://www.nuget.org/packages/HRJDev.Jenny)
 
 # Usage
 "Elements" can be created and then "encoded" into HTML or Markdown formatted strings. When encoding to either HTML or Markdown, special chars will be escaped.
@@ -40,7 +38,7 @@ type Err =
     | RowsNotSameLengths
     | EmptyList
 ```
-No list that is passed to either table, ordered list, unordered list constructors is allowed to be empty, otherwise `Jenny.Err.EmptyList` will be returned inside the Result. Number of columns in each row (length of the lists) all must be the saem as well. 
+No list that is passed to either table, ordered list, unordered list constructors is allowed to be empty, otherwise `Jenny.Err.EmptyList` will be returned inside the Result. Number of columns in each row (length of the lists) all must be the same as well. 
 
 Example of encoding a created element:
 ```fsharp
