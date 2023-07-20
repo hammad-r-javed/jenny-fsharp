@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <VersionPrefix>0.9.1</VersionPrefix>
+    <VersionPrefix>0.9.2</VersionPrefix>
     <PackageId>HRJDev.Jenny</PackageId>
     <Authors>Hammad Javed</Authors>
     <Company>HRJDev</Company>
